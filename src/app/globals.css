@@ -34,3 +34,7 @@ body {
   background: var(--background);
   font-family: var(--main-font);
 }
+
+.img {
+  height: auto;
+}

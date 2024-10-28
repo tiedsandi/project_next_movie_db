@@ -3,12 +3,12 @@ import Link from 'next/link';
 
 export default function SearchLayout({children}) {
   return (
-    <div className='flex flex-col min-h-screen gap-1 '>
+    <main className='flex flex-col min-h-screen gap-1 '>
       <Link href={'/'} className='text-2xl font-bold '>
         MovieDB
       </Link>
       <SearchInput />
       {children}
-    </div>
+    </main>
   );
 }

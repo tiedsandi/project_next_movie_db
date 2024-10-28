@@ -1,3 +1,3 @@
 export default function SearchFilteredPage() {
-  return <h1>Search Results Page</h1>;
+  return <div className='grow'>Search Results Page</div>;
 }
