@@ -1,10 +1,13 @@
+import SearchInput from '@/components/search-input';
+import Link from 'next/link';
+
 export default function SearchLayout({children}) {
   return (
-    <div className=''>
-      <form action='' className=''>
-        <input type='text' className='text-primary' />
-        <button type='submit'>Search</button>
-      </form>
+    <div className='flex flex-col min-h-screen gap-1 '>
+      <Link href={'/'} className='text-2xl font-bold '>
+        MovieDB
+      </Link>
+      <SearchInput />
       {children}
     </div>
   );

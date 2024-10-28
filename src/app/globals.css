@@ -2,20 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+input:focus,
+input:hover,
+input:active,
+input:not(:disabled):not([disabled]),
+input {
+  outline: none;
+  border-color: inherit;
+  background-color: inherit;
+  color: var(--background);
+  background: inherit;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #171717;
+  --foreground: #ffffff;
   --primary: #a0363c;
   --primary-2: #f31422;
   --secondary: #0099ca;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   color: var(--foreground);
