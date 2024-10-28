@@ -28,12 +28,12 @@ export default function SearchInput() {
   return (
     <form
       onSubmit={handleSubmit}
-      className={`flex flex-col items-center justify-center gap-2 ${searchUrl ? '' : 'grow'} `}>
+      className={`flex flex-col items-center justify-center gap-2 ${searchUrl ? '' : 'grow'}  `}>
       <h1 className='text-lg font-medium'>{HeadingText}</h1>
-      <div className='flex gap-2 overflow-hidden bg-white rounded-lg'>
+      <div className='flex gap-2 overflow-hidden bg-white rounded-lg md:w-1/2'>
         <input
           type='text'
-          className='px-3 py-1'
+          className='py-1 pl-3 pr-1 grow'
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           name='search'

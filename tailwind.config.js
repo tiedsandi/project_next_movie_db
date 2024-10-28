@@ -14,6 +14,9 @@ module.exports = {
         secondary: 'var(--secondary)',
         'primary-2': 'var(--primary-2)',
       },
+      boxShadow: {
+        '3xl': ' 0 4px 6px -1px rgba(255, 255, 255, 0.3)',
+      },
     },
     container: {
       center: true,

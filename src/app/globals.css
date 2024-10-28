@@ -35,6 +35,7 @@ body {
   font-family: var(--main-font);
 }
 
-.img {
-  height: auto;
+.img-notfound img {
+  width: 100px; /* Set to your desired width */
+  height: auto; /* Maintain aspect ratio */
 }
