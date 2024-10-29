@@ -12,7 +12,7 @@ export default function SearchInput() {
   const [searchTerm, setSearchTerm] = useState(searchUrl);
   const [loading, setLoading] = useState(false);
 
-  const HeadingText = searchUrl ? `Result for '${searchTerm}'` : 'Find your movie here!!!';
+  const HeadingText = searchUrl ? `Result for '${searchUrl}'` : 'Find your movie here!!!';
 
   const handleSubmit = (event) => {
     event.preventDefault();
