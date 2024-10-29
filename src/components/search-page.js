@@ -33,7 +33,11 @@ export default function SearchPageList({initialResults, initialPage, totalPages,
             className='flex flex-col gap-2 shadow-white-sm hover:shadow-white-xl'>
             <div className='relative w-full h-80'>
               <Image
-                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                src={
+                  movie.poster_path
+                    ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+                    : '/noimage.webp'
+                }
                 alt={movie.title}
                 fill
                 priority
@@ -49,8 +53,11 @@ export default function SearchPageList({initialResults, initialPage, totalPages,
           </Link>
         ))}
       </div>
-      <div className={`${currentPage < totalPages ? '' : 'hidden'}`}>
-        <button onClick={handleLoadMore} disabled={loading}>
+      <div className={`${currentPage < totalPages ? '' : 'hidden'} text-center`}>
+        <button
+          onClick={handleLoadMore}
+          disabled={loading}
+          className='px-3 py-1 rounded-lg bg-secondary'>
           {loading ? 'Loading...' : 'Load More'}
         </button>
       </div>

@@ -15,7 +15,7 @@ export const metadata = {
 export default function RootLayout({children}) {
   return (
     <html lang='en'>
-      <body className={`${nunitoFont.variable} container antialiased`}>{children}</body>
+      <body className={`${nunitoFont.variable} container py-5 antialiased`}>{children}</body>
     </html>
   );
 }

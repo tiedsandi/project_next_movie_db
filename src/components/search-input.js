@@ -15,9 +15,9 @@ export default function SearchInput() {
   const HeadingText = searchUrl ? `Result for '${searchUrl}'` : 'Find your movie here!!!';
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+    console.log(loading);
     setLoading(true);
-
+    event.preventDefault();
     if (searchTerm.trim()) {
       router.push(`/search/${encodeURIComponent(searchTerm.trim())}`);
     }

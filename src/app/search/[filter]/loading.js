@@ -1,3 +1,3 @@
-export default function LoadingSearch() {
-  return <div className='grow'>Loading Fetching...</div>;
+export default function Loading() {
+  return <div className='grow'>Loading data...</div>;
 }
