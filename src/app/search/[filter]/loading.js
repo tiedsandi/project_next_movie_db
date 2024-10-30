@@ -1,3 +1,3 @@
 export default function Loading() {
-  return <div className='grow'>Loading data...</div>;
+  return <div className='text-center grow'>Loading data...</div>;
 }

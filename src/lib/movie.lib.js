@@ -41,3 +41,22 @@ export async function getMoreMovie(input, page) {
     throw error;
   }
 }
+
+export async function getDetailMovie(id) {
+  try {
+    const url = `https://api.themoviedb.org/3/movie/${id}`;
+    const response = await fetch(url, options);
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error('Error fetching movies:', errorData);
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data.results;
+  } catch (error) {
+    console.error('Error fetching detail:', error);
+    throw error;
+  }
+}

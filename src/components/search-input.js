@@ -14,12 +14,12 @@ export default function SearchInput() {
 
   const HeadingText = searchUrl ? `Result for '${searchUrl}'` : 'Find your movie here!!!';
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     console.log(loading);
     setLoading(true);
     event.preventDefault();
     if (searchTerm.trim()) {
-      router.push(`/search/${encodeURIComponent(searchTerm.trim())}`);
+      await router.push(`/search/${encodeURIComponent(searchTerm.trim())}`);
     }
 
     setLoading(false);

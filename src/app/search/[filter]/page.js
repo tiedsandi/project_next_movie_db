@@ -15,7 +15,6 @@ export async function generateMetadata(context) {
 
 export default async function SearchFilteredPage(context) {
   const param = await context.params;
-
   const encodedQuery = decodeURIComponent(param.filter);
 
   const {results, total_movies, total_page} = await getSearchMovie(encodedQuery);
