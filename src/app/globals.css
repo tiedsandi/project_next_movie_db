@@ -39,3 +39,7 @@ body {
   width: 100px; /* Set to your desired width */
   height: auto; /* Maintain aspect ratio */
 }
+
+.content-container {
+  height: calc(100vh - 0.75rem - 0.75rem);
+}
