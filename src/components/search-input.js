@@ -6,30 +6,32 @@ import {useState} from 'react';
 export default function SearchInput() {
   const router = useRouter();
   const pathname = usePathname();
-
   const searchUrl = decodeURIComponent(pathname.split('/')[2] || '');
 
   const [searchTerm, setSearchTerm] = useState(searchUrl);
   const [loading, setLoading] = useState(false);
 
-  const HeadingText = searchUrl ? `Result for '${searchUrl}'` : 'Find your movie here!!!';
-
-  const handleSubmit = async (event) => {
-    console.log(loading);
-    setLoading(true);
+  const handleSubmit = (event) => {
     event.preventDefault();
-    if (searchTerm.trim()) {
-      await router.push(`/search/${encodeURIComponent(searchTerm.trim())}`);
-    }
+    setLoading(true);
 
-    setLoading(false);
+    if (searchTerm.trim()) {
+      setTimeout(() => {
+        setLoading(false);
+      }, 2000);
+      router.push(`/search/${encodeURIComponent(searchTerm.trim())}`);
+    } else {
+      setLoading(false);
+    }
   };
 
   return (
     <form
       onSubmit={handleSubmit}
-      className={`flex flex-col items-center justify-center gap-2 ${searchUrl ? '' : 'grow'}  `}>
-      <h1 className='text-lg font-medium'>{HeadingText}</h1>
+      className={`flex flex-col items-center justify-center gap-2 ${searchUrl ? '' : 'grow'}`}>
+      <h1 className='text-lg font-medium'>
+        {searchUrl ? `Result for '${searchUrl}'` : 'Find your movie here!!!'}
+      </h1>
       <div className='flex gap-2 overflow-hidden bg-white rounded-lg md:w-1/2'>
         <input
           type='text'

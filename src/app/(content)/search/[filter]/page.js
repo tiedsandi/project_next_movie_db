@@ -4,7 +4,6 @@ import {getSearchMovie} from '@/lib/movie.lib';
 export async function generateMetadata(context) {
   const param = await context.params;
   const encodedQuery = decodeURIComponent(param.filter);
-
   const {total_movies} = await getSearchMovie(encodedQuery);
 
   return {
@@ -13,15 +12,17 @@ export async function generateMetadata(context) {
   };
 }
 
-export default async function SearchFilteredPage(context) {
-  const param = await context.params;
-  const encodedQuery = decodeURIComponent(param.filter);
+export default async function SearchFilteredPage({params}) {
+  const {filter} = await params;
+  const encodedQuery = decodeURIComponent(filter);
 
   const {results, total_movies, total_page} = await getSearchMovie(encodedQuery);
 
   return (
     <div className='flex flex-col gap-4 grow'>
-      <h2 className='text-base font-light text-center'>'{total_movies}' movies matches</h2>
+      <h2 className='text-base font-light text-center'>
+        '{total_movies}' movies match your search
+      </h2>
 
       <SearchPageList
         initialResults={results}
