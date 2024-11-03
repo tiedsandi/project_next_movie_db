@@ -54,7 +54,8 @@ export async function getDetailMovie(id) {
     }
 
     const data = await response.json();
-    return data.results;
+
+    return data;
   } catch (error) {
     console.error('Error fetching detail:', error);
     throw error;

@@ -43,3 +43,8 @@ body {
 .content-container {
   height: calc(100vh - 0.75rem - 0.75rem);
 }
+
+.img img {
+  width: 100%;
+  height: auto;
+}
