@@ -1,6 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+export const metadata = {
+  title: 'Not Found',
+  description: 'Error 404',
+};
+
 export default function NotFound() {
   return (
     <main className='flex flex-col items-center justify-center min-h-screen gap-3'>

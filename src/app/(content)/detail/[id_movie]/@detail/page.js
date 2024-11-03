@@ -1,10 +1,17 @@
 import {getDetailMovie} from '@/lib/movie.lib';
 import Image from 'next/image';
+import {notFound} from 'next/navigation';
 
 export async function generateMetadata({params}) {
   const {id_movie} = await params;
 
   const movie = await getDetailMovie(id_movie);
+  if (!movie) {
+    return {
+      title: `Not Found`,
+      description: `Error 404`,
+    };
+  }
 
   return {
     title: `Details for '${movie.title}'`,
@@ -16,6 +23,10 @@ export default async function DetailPage({params}) {
   const {id_movie} = await params;
 
   const movie = await getDetailMovie(id_movie);
+
+  if (!movie) {
+    notFound();
+  }
 
   return (
     <>

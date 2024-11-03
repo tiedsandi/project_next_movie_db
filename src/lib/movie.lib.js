@@ -47,15 +47,15 @@ export async function getDetailMovie(id) {
     const url = `https://api.themoviedb.org/3/movie/${id}`;
     const response = await fetch(url, options);
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      console.error('Error fetching movies:', errorData);
-      throw new Error(`HTTP error! status: ${response.status}`);
+    if (response.status === 404) {
+      return null;
     }
 
-    const data = await response.json();
+    if (!response.ok) {
+      throw new Error(`Failed to fetch movie details: ${response.status}`);
+    }
 
-    return data;
+    return await response.json();
   } catch (error) {
     console.error('Error fetching detail:', error);
     throw error;
@@ -68,7 +68,12 @@ export async function getSimiliarMovie(id) {
     const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/similar `, options);
 
     const data = await response.json();
-    return {results: data.results.slice(0, 5)};
+
+    if (data.status_code === 200) {
+      return {results: data.results.slice(0, 5)};
+    } else {
+      return {results: []};
+    }
   } catch (error) {
     console.error('Error fetching movies:', error);
     throw error;
