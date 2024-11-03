@@ -1,6 +1,17 @@
 import {getDetailMovie} from '@/lib/movie.lib';
 import Image from 'next/image';
 
+export async function generateMetadata({params}) {
+  const {id_movie} = await params;
+
+  const movie = await getDetailMovie(id_movie);
+
+  return {
+    title: `Details for '${movie.title}'`,
+    description: `${movie.overview}`,
+  };
+}
+
 export default async function DetailPage({params}) {
   const {id_movie} = await params;
 
@@ -9,17 +20,27 @@ export default async function DetailPage({params}) {
   return (
     <>
       <Image
-        src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
+        src={
+          movie.backdrop_path
+            ? `https://image.tmdb.org/t/p/original${movie.backdrop_path}`
+            : '/no-image.png'
+        }
         alt={movie.title}
         fill
         priority
-        className='z-[-2] object-cover rounded-md img'
+        className={`z-[-2] object-cover rounded-md img ${
+          !movie.backdrop_path ? 'object-center' : 'object-top'
+        }`}
         sizes='(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 50vw'
       />
       <div className='absolute z-[-1] w-full h-full p-0 opacity-70 bg-gray-950' />
       <div className='flex flex-col items-center self-end w-full gap-5 p-4 sm:flex-row sm:items-start '>
         <Image
-          src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+          src={
+            movie.poster_path
+              ? `https://image.tmdb.org/t/p/original${movie.poster_path}`
+              : '/noimage.webp'
+          }
           alt={movie.title}
           priority
           className='rounded-lg '
