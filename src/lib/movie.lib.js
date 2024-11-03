@@ -61,3 +61,16 @@ export async function getDetailMovie(id) {
     throw error;
   }
 }
+
+export async function getSimiliarMovie(id) {
+  try {
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/similar `, options);
+
+    const data = await response.json();
+    return {results: data.results.slice(0, 5)};
+  } catch (error) {
+    console.error('Error fetching movies:', error);
+    throw error;
+  }
+}
