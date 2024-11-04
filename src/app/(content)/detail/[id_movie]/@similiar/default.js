@@ -20,7 +20,7 @@ export default async function SimiliarMovie({params}) {
         return (
           <Link
             key={result.id}
-            href={`/detail/2`}
+            href={`/detail/${result.id}`}
             className='flex flex-col gap-2 shadow-white-sm hover:shadow-white-xl w-52'>
             <div className='relative w-full h-80'>
               <Image
