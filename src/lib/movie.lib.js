@@ -69,7 +69,7 @@ export async function getSimiliarMovie(id) {
 
     const data = await response.json();
 
-    if (data.status_code === 200) {
+    if (!data.success) {
       return {results: data.results.slice(0, 5)};
     } else {
       return {results: []};
