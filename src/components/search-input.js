@@ -42,12 +42,14 @@ export default function SearchInput() {
             placeholder='Search Movies...'
             defaultValue={searchUrl}
           />
-          <button type='submit' className='px-3 py-1 bg-primary'>
-            {isPending ? 'Searching...' : 'Go'}
+          <button
+            type='submit'
+            disabled={isPending}
+            className={`px-3 py-1 ${isPending ? 'bg-secondary' : 'bg-primary'}`}>
+            {isPending ? 'Searching...' : 'Search'}
           </button>
         </div>
       </form>
-      {/* {isPending && <p>Submitting...</p>} */}
     </div>
   );
 }

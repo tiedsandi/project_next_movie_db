@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Movie Search
 
-## Getting Started
+Your web application allows users to search for movies and displays a list of relevant results. Users can view detailed information for each movie and explore similar movie recommendations on the detail page. The app is designed to be responsive and user-friendly, providing an informative movie search experience.
 
-First, run the development server:
+## Tech Stack
+
+**Client:** Next.js, Tailwind
+
+**Server:** [API MovieDB](https://developer.themoviedb.org/reference/intro/getting-started)
+
+## Demo
+
+https://the-next-movie-db.vercel.app/
+
+## Screenshots
+
+![App Screenshot](public/demo/img-1.png)
+![App Screenshot](public/demo/img-2.png)
+
+</div>
+
+## Run Locally
+
+Clone the project
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  git clone https://github.com/tiedsandi/project_next_movie_db
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Go to the project directory
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+  cd project_next_movie_db
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Install dependencies
 
-## Learn More
+```bash
+  npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+Start the server
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+  npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Environment Variables
 
-## Deploy on Vercel
+To run this project, you will need to add the following environment variables to your **.env.local** file
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`MOVIEDB_API_KEY`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Hi, I'm Fachran! 👋
+
+## 🚀 About Me
+
+I am a web developer based Jakarta, Indonesia. With a passion for continuous learning and growth, I focus on building interactive and responsive user interfaces. I have experience developing web applications using modern technologies like React.js, Redux, and SASS, along with design skills in Figma to ensure both aesthetics and functionality.
+
+## 🛠 Skills
+
+I am proficient in programming languages like JavaScript, as well as front-end technologies such as HTML, CSS, and popular frameworks like Bootstrap. Additionally, I am experienced in integrating Restful APIs to build dynamic, backend-connected applications.
+
+I strive to create innovative, user-friendly solutions and am eager to contribute to dynamic and collaborative development teams.
+
+## 🔗 Links
+
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://fachran-sandi.netlify.app/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/fachransandi/)
