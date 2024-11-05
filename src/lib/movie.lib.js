@@ -29,7 +29,6 @@ export async function getMoreMovie(input, page) {
     const response = await fetch(url, options);
 
     const data = await response.json();
-    console.log(data);
 
     return data.results;
   } catch (error) {
