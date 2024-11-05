@@ -2,7 +2,7 @@ export const options = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization: `Bearer ${process.env.MOVIEDB_API_KEY}`,
+    Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
   },
 };
 
@@ -28,13 +28,9 @@ export async function getMoreMovie(input, page) {
 
     const response = await fetch(url, options);
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      console.error('Error fetching movies:', errorData);
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
     const data = await response.json();
+    console.log(data);
+
     return data.results;
   } catch (error) {
     console.error('Error fetching movies:', error);
@@ -49,10 +45,6 @@ export async function getDetailMovie(id) {
 
     if (response.status === 404) {
       return null;
-    }
-
-    if (!response.ok) {
-      throw new Error(`Failed to fetch movie details: ${response.status}`);
     }
 
     return await response.json();

@@ -16,6 +16,7 @@ export default function SearchPageList({initialResults, initialPage, totalPages,
       setLoading(true);
       const newPage = currentPage + 1;
       const newResults = await getMoreMovie(searchQuery, newPage);
+      console.log(newResults);
 
       setResults([...results, ...newResults]);
       setCurrentPage(newPage);
