@@ -10,7 +10,7 @@ Your web application allows users to search for movies and displays a list of re
 
 ## Demo
 
-https://the-next-movie-db.vercel.app/
+https://the-next-movie-db.netlify.app/
 
 ## Screenshots
 
